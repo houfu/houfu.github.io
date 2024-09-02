@@ -22,7 +22,7 @@ style = "github-dark"
   # favicon_16 = "/img/favicon-16x16.png"
 
   since = "2019"
-  commit = "https://github.com/houfu/houfu.github.io/commit"
+  commit = "https://github.com/houfu/houfu.github.io/"
 
   enableTwemoji = true
 
