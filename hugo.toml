@@ -1,0 +1,80 @@
+baseurl = "http://www.example.com"
+title = "AngHouFu"
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+paginate = 20
+
+[markup.highlight]
+style = "github-dark"
+
+[params]
+  author = "Ang Hou Fu"
+  info = "I write code at night. Other law things in the day."
+  description = "Ang Hou Fu's personal website"
+  keywords = "blog,developer,personal"
+  # avatarurl = "images/avatar.jpg"
+  gravatar = "damon.houf@gmail.com"
+
+  # faviconSVG = "/img/favicon.svg"
+  # favicon_32 = "/img/favicon-32x32.png"
+  # favicon_16 = "/img/favicon-16x16.png"
+
+  since = "2019"
+  commit = "https://github.com/houfu/houfu.github.io/"
+
+  enableTwemoji = true
+
+  colorScheme = "auto"
+  hidecolorschemetoggle = false
+
+  # customCSS = ["css/custom.css"]
+  # customSCSS = ["scss/custom.scss"]
+  # customJS = ["js/custom.js"]
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
+# Social links
+[[params.social]]
+  name = "Github"
+  icon = "fa-brands fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/houfu/"
+[[params.social]]
+  name = "Twitter"
+  icon = "fa-brands fa-x-twitter fa-2x"
+  weight = 4
+  url = "https://twitter.com/houfu/"
+[[params.social]]
+  name = "LinkedIn"
+  icon = "fa-brands fa-linkedin fa-2x"
+  weight = 2
+  url = "https://www.linkedin.com/in/hou-fu-ang-0a6851113/"
+[[params.social]]
+  name = "Mastodon"
+  icon = "fa-brands fa-mastodon fa-2x"
+  weight = 3
+  url = "https://kopiti.am/@houfu"
+[[params.social]]
+  name = "Email"
+  icon = "fa-solid fa-at fa-2x"
+  weight = 4
+  url = "mailto:houfu@outlook.sg"
+
+# Menu links
+[[menu.main]]
+  name = "Blog"
+  weight = 1
+  url  = "posts/"
+[[menu.main]]
+  name = "Projects"
+  weight = 2
+  url  = "projects/"
+[[menu.main]]
+  name = "About"
+  weight = 3
+  url = "about/"
