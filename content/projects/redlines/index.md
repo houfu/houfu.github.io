@@ -20,8 +20,13 @@ Redlines uses `SequenceMatcher` to find differences between words used.
     url="https://github.com/houfu/redlines"
     title="Github Repository"
     description="Explore the code and take part in development of this open source library"
+    image="images/github-mark.png"
 >}}
 
 I gave a talk on it too!
 
 {{< youtube jkfVJ36zWZY >}}
+
+Check out the presentation here too:
+
+{{< pdf src="https://res.cloudinary.com/lovelawrobots/image/upload/geekcamp-prez_y8xro8.pdf" width=800 height=600 >}}
