@@ -1,3 +1,5 @@
+/* linkcard */
+
 .link-card {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -28,4 +30,41 @@
 
 .link-card-text p {
   margin: 0;
+}
+
+/* project grid layout */
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.project-card {
+  flex: 1 1 100%; /* Make each card take up the full width */
+  max-width: 100%; /* Ensure cards don't exceed the full width */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s;
+  margin-bottom: 16px; /* Add margin to create space between rows */
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+}
+
+.project-card h2 {
+  margin: 16px 0 8px;
+}
+
+.project-card p {
+  padding: 0 16px 16px;
 }
