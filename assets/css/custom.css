@@ -1,0 +1,31 @@
+.link-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  margin: 16px 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-card-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.link-card-image img {
+  width: 150px;
+  height: auto;
+}
+
+.link-card-text {
+  padding: 16px;
+}
+
+.link-card-text h3 {
+  margin: 0 0 8px 0;
+}
+
+.link-card-text p {
+  margin: 0;
+}

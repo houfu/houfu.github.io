@@ -1,0 +1,21 @@
+{{ $url := .Get "url" }}
+{{ $title := .Get "title" }}
+{{ $description := .Get "description" }}
+{{ $default_image := resources.Get "images/linkcard-default.jpeg" }}
+{{ $card_image := .Get "image" | default $default_image }}
+{{ $card_image_webp := $card_image.Process "webp icon fit 300x300"}}
+{{ $image := .Get "image" | default $card_image_webp.RelPermalink }}
+
+<div class="link-card">
+  <a href="{{ $url }}" target="_blank" rel="noopener noreferrer">
+	<div class="link-card-content">
+	  <div class="link-card-image">
+		<img src="{{ $image }}" alt="{{ $title }}">
+	  </div>
+	  <div class="link-card-text">
+		<h3>{{ $title }}</h3>
+		<p>{{ $description }}</p>
+	  </div>
+	</div>
+  </a>
+</div>
