@@ -68,9 +68,9 @@ style = "github-dark"
 
 # Matomo
 
-[[params.matomo]]
+[params.matomo]
     siteID = "1"
-    serverURL = "matomo.sylbooboo.xyz"
+    serverURL = "https://matomo.sylbooboo.xyz"
 
 # Menu links
 [[menu.main]]
