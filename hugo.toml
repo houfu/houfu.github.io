@@ -66,6 +66,12 @@ style = "github-dark"
   weight = 4
   url = "mailto:houfu@outlook.sg"
 
+# Matomo
+
+[[params.matomo]]
+    siteID = "1"
+    serverURL = "matomo.sylbooboo.xyz"
+
 # Menu links
 [[menu.main]]
   name = "Blog"
