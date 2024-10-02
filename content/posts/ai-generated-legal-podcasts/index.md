@@ -1,5 +1,4 @@
 +++ 
-draft = true
 date = 2024-10-02T09:37:39+08:00
 title = "AI-Generated Legal Podcasts: A Deep Dive into NotebookLM"
 description = "Explore the intersection of legal tech and artificial intelligence as I experiment with Google's NotebookLM to create AI-generated legal podcasts. Discover the challenges and potential of using AI for podcast creation in the legal field."
@@ -35,7 +34,7 @@ Key features of NotebookLM:
 
 ## My Experiment
 
-I fed one week of legal news summaries from SG Law Cookies (about 35 articles) into NotebookLM and asked it to generate a 10-minute podcast summarizing key legal developments.
+I fed one week of legal news summaries from SG Law Cookies (about 20 articles) into NotebookLM and asked it to generate a 10-minute podcast summarizing key legal developments.
 
 ## Listen and Provide Feedback
 
@@ -60,7 +59,7 @@ Your insights will be invaluable in understanding the potential and limitations 
 ## Areas for Improvement
 
 1. **Thematic Organization**: The day-by-day processing approach led to a somewhat disjointed narrative. A more sophisticated topic identification system could improve content structuring.
-2. **Natural-Sounding Speech**: While intelligible, the synthesized speech lacked the natural flow of human speakers. More advanced voice synthesis techniques could enhance the listening experience.
+2. **Natural-Sounding Speech**: While better than the usual text-to-speech experience, the synthesized speech lacked the natural flow of human speakers. More advanced voice synthesis techniques could enhance the listening experience.
 3. **Content Prioritization**: The current system seemed to weigh all input equally, occasionally including less significant news items. Implementing a smarter relevance scoring system could improve content selection.
 
 ## Potential Enhancements
