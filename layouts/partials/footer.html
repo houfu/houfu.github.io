@@ -16,5 +16,15 @@
       [<a href="{{ .Site.Params.commit }}/{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{ .GitInfo.AbbreviatedHash }}</a>]
     {{ end }}
   </section>
+  {{ if .Store.Get "hasMermaid" }}
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    const isDarkMode = document.body.classList.contains('colorscheme-dark');
+    mermaid.initialize({ 
+      startOnLoad: true,
+      theme: isDarkMode ? 'dark' : 'default'
+    });
+  </script>
+  {{ end }}
   <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="houfu" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="left" data-x_margin="18" data-y_margin="18"></script>
 </footer>
