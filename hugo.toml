@@ -66,6 +66,18 @@ style = "github-dark"
   weight = 4
   url = "mailto:houfu@outlook.sg"
 
+
+[outputFormats]
+  [outputFormats.SITEXML]
+    mediaType = "application/xml"
+    baseName = "site-export"
+    isPlainText = true
+    notAlternative = true
+
+
+[outputs]
+  home = ["HTML", "RSS", "SITEXML"] 
+
 # Matomo
 
 # [params.matomo]
