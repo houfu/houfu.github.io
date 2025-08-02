@@ -1,19 +1,27 @@
 +++ 
-draft = true
-date = 2025-01-20T00:20:16+08:00
-title = "Simplifying Home Network Security with Tailscale: A Journey from Port Forwarding to Zero Trust"
-description = ""
+date = 2025-08-03T00:20:16+08:00
+title = "Trying Tailscale"
+description = "How I simplified my home network security with Tailscale - a practical guide for professionals managing multiple devices and cloud services"
 slug = "trying-tailscale"
-tags = []
-categories = []
+tags = ["Technology", "Legal Tech", "Networking", "Security", "Infrastructure", "Remote Work"]
+categories = ["posts"]
 +++
 
-## Introduction
+## The Problem: Modern Networks Are Messy
 
 I once gave Claude my entire Mastodon posting history and asked it for comments. It said, among others, that there were "Many threads about technical troubleshooting that end unresolved, which may frustrate followers." I read it as "you complain about your networking problems excessively", even on Christmas eve.[^1] 
-{{< stoot instance="kopiti.am" id="113708319104896219" >}}
 
-Like many tech enthusiasts, I've spent years building and maintaining my home network. It started simple. A decent home router with some devices like laptops. Then a NAS. A repurposed computer serves web apps through docker for many years before being moved to the cloud. Then suddenly everybody started owning mobile devices. Nextcloud become a "good enough" and private alternative. Now everyone wants to access resources on my home network, both at home and outside of home. 
+Managing a home network shouldn't require a computer science degree. Like many tech enthusiasts, I've spent years building and maintaining my home network and it has grown complex since.[^2] Nevertheless, tools have caught up, so here's now I simplified mine with Tailscale.
+
+## My Network evolves
+
+Like many professionals, my setup grew organically:
+
+* Started simple: Basic router + laptops
+* Added storage: NAS for file sharing
+* Went mobile: Everyone got smartphones and tablets
+* Moved to cloud: Web apps via Docker containers
+* Hit complexity wall: Multiple access methods, security layers, constant troubleshooting
 
 ```mermaid
 graph TB
@@ -68,26 +76,24 @@ graph TB
     Tablet -.->|Local Access| NAS
 ```
 
-I think this setup is fairly typical in a modern household. Unfortunately, you need to manage several layers of configuration and security:
-* Configure and maintain the reverse proxy (like Nginx or Traefik) for the Cloud Server
-* Configure Docker and maintain container configurations
-* Manage SSL certificates and their renewal
-* Set up and maintain port forwarding rules for NAS access
-* Manage DNS settings
-* Configure network shares and permissions for file sharing and accounts
-* Manage different URLs/IPs for local vs remote access
+## The Pain Points
 
-We spend lots of money on our equipment and there are lots of applications, both practical and fun, which increases the bang for our buck. In order to maximise our dollars, we also need to expend time and effort to ensure our IT infrastructure can support this, including from a security perspective. 
+* Cloud Server: Reverse proxy configuration, SSL certificates, Docker maintenance
+* Network Access: Port forwarding rules, DNS settings, different URLs for local vs remote
+* File Sharing: Network shares, permissions, user accounts across devices
+* Security: Multiple authentication layers, each with their own complexity
+
+The breaking point: My Nextcloud server died while I was on holiday in Izu, leaving me unable to access my files when I needed them most.
+
+{{< bluesky link="https://bsky.app/profile/hohohouf.bsky.social/post/3lcfgevpxgc2l" >}}
+
+Time to try something different.
 
 ## Enter Tailscale
 
-I had known about Tailscale for quite some time because I was checking out something related -- WireGuard. Back then I was trying to improve my Pi-Hole. It was cool to be able to connect your phone easily to your home network even when you're not physically there, but it was too much of a hassle. I lost interest shortly thereafter.
+I'd heard about [Tailscale](https://tailscale.com) before but dismissed it as "too much hassle." After my holiday networking disaster, it was time to give it a serious try.
 
-Things took a turn for the worse when I left on a holiday in Izu without my laptop (digital detox?). 
-{{< bluesky link="https://bsky.app/profile/hohohouf.bsky.social/post/3lcfgevpxgc2l" >}}
-My Nextcloud server had crapped on itself while trying to update, and it had done this over several days so that I had no idea where was a good start. With some help from the fediverse, I managed to get terminal access through my iPad, but I had no ideas how to fix it while holidaying. Coming back, I still had no inspiration.[^2]
-
-It felt like a good time to try something new. So I decied to install tailscale everywhere to see what will happen.
+The premise: Create a secure private network that follows you everywhere, without traditional VPN complexity.
 
 ## My Tailscale Installation Journey
 After deciding to try Tailscale, I started with what seemed like the easiest devices first. This turned out to be a good strategy, as it helped me understand the basics before tackling more complex setups.
@@ -99,7 +105,14 @@ Getting started was surprisingly straightforward. After creating a Tailscale acc
 * Log in with your Tailscale account
 * Accept the connection request
 
-What impressed me was the immediate result - Tailscale automatically assigned each device an IP address and a hostname on my new private network. No manual configuration needed. Suddenly, my phone could reach my laptop using either the IP or hostname, regardless of which network either device was on.
+The Result:
+
+* Automatic IP assignment for each device
+* Automatic hostname generation
+* Instant connectivity regardless of physical network
+* No manual configuration required
+
+**The Wow Factor**: My phone could now reach my laptop using either IP or hostname, whether I was at home, work, or a coffee shop.
 
 ## Synology NAS: Where Tailscale Really Shines
 Installing Tailscale on my Synology NAS was refreshingly simple thanks to the package being available directly in the Synology Package Center. But the real magic became apparent after the installation.
@@ -115,24 +128,45 @@ I had previously tried Synology's QuickConnect for remote access, but found it l
 * Access services running on specific ports without any port forwarding
 * Use standard Linux networking tools and protocols
 
-This flexibility is game-changing. Instead of being confined to Synology's tools, I can now interact with my NAS as if it were a local network device, regardless of where I am. Need to connect to a MariaDB database running on the NAS? Just use the Tailscale IP and port. Want to mount a share on your Linux laptop? NFS is now accessible wherever you are.
+**Real-world impact**: Need database access while traveling? Just use the Tailscale IP. Want to mount a share on your laptop? NFS is now accessible globally.
 
 ## Cloud Server: The Final Piece
 
 I knew that as I moved up my server chain, things will start to get dicey.
 
-In order to get Tailscale to play nice with my Nextcloud AIO, I had to do something I never did in docker before. I had to ["link" my Tailscale container to my Nextcloud container](https://tailscale.com/blog/docker-tailscale-guide#service-linking). This worked like Tailscale was shadowing my Nextcloud, and allowed Nextcloud to operate within the Tailscale network. Now only clients connected to my Tailscale Network were able to connect to my Nextcloud instance, including Talk and other features.
+In order to get Tailscale to play nice with my Nextcloud AIO, I had to do something I never did in docker before. I had to ["link" my Tailscale container to my Nextcloud container](https://tailscale.com/blog/docker-tailscale-guide#service-linking) and configure OAuth authentication and tags.[^3] This worked like Tailscale was shadowing my Nextcloud, and allowed Nextcloud to operate within the Tailscale network.
 
-So, once you get the authentication[^3] and sidecar linking working, you can get Tailscale to play with your docker container. It is a lot more involved than installing an app, but still pretty manageable if you've already been working with docker containers regularly. It is kinda weird to create individual Tailscale containers for each service, but they're all docker containers, so it ain't a big deal right?
+**It's magic**
 
-Another problem which I foresee is a mix between private and public services. For example, there's a web server you want to allow the public to see, but you would like to keep the database and other services connected to the seb server to be private in a VPN. It's actually a happy problem to have -- I haven't found a set up which absolutely requires this configuration. 
+* Nextcloud now only accessible via Tailscale network
+* All features work (including Talk)
+* Private access without exposing services to the public internet
+
+**Complexity level**: More involved than mobile apps, but manageable if you're already working with Docker.
 
 ## Conclusion: Tailscale is for the modern cloud
 
-In the past, a home network was a "home" network. Physically, devices were behind a router, so you would always know where home is. However, a modern network, and increasingly the one I find in my home, has a more textured infrastructure consisting of cloud devices and mobile devices which sometimes are at home, and sometimes not at home. The abstraction that Tailscale provides makes the obvious straightforward, and I would recommend you to try it. I now keep my VPN on all the time. It's like a piece of home that stays close to me. 
+Using Tailscale enabled me to score some pretty sweet benefits:
+
+* Security Wins
+  * Nothing exposed to public internet
+  * Encrypted connections: All traffic secured automatically
+  * Device authentication: Only approved devices can connect
+
+* Simplification Wins
+  * No port forwarding: Direct device-to-device connections
+  * No DNS juggling
+  * No certificate management: Tailscale handles encryption
+
+* Flexibility Wins
+  * Use any networking protocol (HTTP, NFS, SSH, database connections)
+  * Works on everything from phones to servers
+  * Location independence: Home network follows you everywhere
+
+As lawyers, we are also increasingly working with sensitive data across multiple devices and locations. The networking principles I learned here apply directly to secure confidentiality in the material we work with. It's great to know that straightforward solutions exists, so if you have not explored it yourself, give it a go!
 
 [^1]: After I requested Claude to clarify its remark (read: put up or shut up), it apologised for "this inaccurate observation." (In the particular example, I did come back to share that I got it to work, several days later.)  
 
-[^2]: There's a good argument that there wasn't anything I could do while I was in Izu. However, I needed to ensure my photos were being backed up in the cloud via NextCloaud. On hindsight, trying to maintain an operation while fixing a problem may have ruined both objectives. 
+[^2]:  It started simple. A decent home router with some devices like laptops. Then a NAS. A repurposed computer serves web apps through docker for many years before being moved to the cloud. Then suddenly everybody started owning mobile devices. Nextcloud become a "good enough" and private alternative. Now everyone wants to access resources on my home network, both at home and outside of home. 
 
 [^3]: The authentication aspect might be quite challenging as well, as you need to create OAuth keys and tags for containers. The [original link](https://tailscale.com/blog/docker-tailscale-guide) provides a good walkthrough on how to do that too.
