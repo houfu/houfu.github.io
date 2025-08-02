@@ -16,15 +16,16 @@
 			at time of site build.]</p>
 		</blockquote>
 	{{- else -}}
-		{{- $json := unmarshal $resource.Content -}}
-		{{- $jsonHolder := $json -}}{{/* Being safe */}}
+		{{- with $resource.Value -}}
+			{{- $json := unmarshal .Content -}}
+			{{- $jsonHolder := $json -}}{{/* Being safe */}}
 
-		{{- if isset $json "account" -}}
-			{{- $tootLink = print "https://" $masIns "@" $json.account.acct "/status/" $id -}}
-			{{- $handleInst = print "@" $json.account.acct "@" $masIns -}}
-		{{- end -}}
+			{{- if isset $json "account" -}}
+				{{- $tootLink = print "https://" $masIns "@" $json.account.acct "/status/" $id -}}
+				{{- $handleInst = print "@" $json.account.acct "@" $masIns -}}
+			{{- end -}}
 
-		{{- if isset $json "content" -}}
+			{{- if isset $json "content" -}}
 			<blockquote class="toot-blockquote" cite="{{ $tootLink }}">
 				<div class="toot-header">
 					<a class="toot-profile" href="https://{{ $masIns }}/@{{ $json.account.acct }}" rel="noopener">
@@ -162,6 +163,11 @@
 				<div class="toot-footer">
 					<a href="https://{{ $masIns }}/@{{ $json.account.acct }}/{{ $json.id }}" class="toot-date" rel="noopener">{{ dateFormat "3:04 PM • January 2, 2006" $json.created_at }}</a>&nbsp;<span class="legal">(UTC)</span>
 				</div>
+			</blockquote>
+			{{- end -}}
+		{{- else -}}
+			<blockquote class="toot-blockquote">
+				<p class="ctr legal">[Unable to load content.]</p>
 			</blockquote>
 		{{- end -}}
 	{{- end -}}
