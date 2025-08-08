@@ -79,10 +79,9 @@ style = "github-dark"
   home = ["HTML", "RSS", "SITEXML"] 
 
 # Matomo
-
-# [params.matomo]
-#    siteID = "1"
-#    serverURL = "https://matomo.sylbooboo.xyz"
+[params.matomo]
+   siteID = "2"
+   serverURL = "https://analytics.zeeker.sg"
 
 # Menu links
 [[menu.main]]
