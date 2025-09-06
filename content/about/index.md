@@ -3,37 +3,57 @@ title = 'About'
 date = 2024-09-05T09:32:37+08:00
 +++
 
-## Hi, I'm Houfu. 
+## Strategic Legal Technology for Real-World Constraints
 
-I stumbled into Law mainly by accident when I was an 18-year-old kid wondering what to do with my life.  I also stumbled into computers and programming mainly as a kid needing something to do with my life. I trip over things a lot.
+I'm a corporate counsel who helps solo counsels and small legal teams leverage technology strategically. After learning to code out of necessity, I built automation tools that streamlined contract processes and contributed to my promotion—all while working within typical corporate constraints.
 
-Now as an adult, I've realised that the only things worth doing, are the things I want to do with my life. 
+Now I teach other lawyers to build practical solutions using budget-friendly tools and realistic timelines.
 
-## Corporate Counsel by Day
+## My Approach: $50 Solutions That Replace $50K Systems
 
-In my day job, I am valued partner to bussssiineesss ... with a wide range of experiences, with special emphasis on legal ops, compliance, data protection and the like. I got certificates and memberships because I enjoy learning new stuff. 
+The legal technology market is full of expensive, over-engineered solutions that don't address the real problems facing resource-constrained legal departments. My focus is on practical automation that actually works in corporate environments.
 
-You can check out my CV or [download it](https://res.cloudinary.com/lovelawrobots/image/upload/Ang_Hou_Fu_2_bqcq2n.pdf) if you're into that sort of thing.
+**What I specialize in:**
+- Document automation and contract processing workflows
+- No-code AI agents for policy guidance and compliance queries  
+- Legal process optimization using existing enterprise tools
+- Practical programming solutions for common legal tasks
+
+**My technical work includes:**
+- Python automation for document processing and analysis
+- Microsoft Copilot Studio agents for legal workflows
+- Integration projects using APIs and existing enterprise systems
+- Open source tools and transparent methodologies
+
+## Who I Help
+
+**Solo counsels and small legal teams** who need to:
+- Automate repetitive tasks without massive IT investments
+- Build practical AI solutions within existing Microsoft 365 environments
+- Streamline contract and compliance processes
+- Leverage technology strategically without becoming full-time developers
+
+**The reality I understand:** You have limited budgets, minimal IT support, and need solutions that work immediately without extensive training or infrastructure changes.
+
+## My Background
+
+As a corporate counsel with experience in legal operations, compliance, and data protection, I understand both the legal requirements and practical constraints that shape technology decisions in legal departments.
+
+My programming journey started with necessity—I needed to solve workflow problems that existing tools couldn't address. This practical foundation means I focus on solutions that deliver measurable value rather than impressive technical complexity.
+
+You can [download my CV](https://res.cloudinary.com/lovelawrobots/image/upload/Ang_Hou_Fu_2_bqcq2n.pdf) for more details about my professional background.
 
 {{< pdf src="https://res.cloudinary.com/lovelawrobots/image/upload/Ang_Hou_Fu_2_bqcq2n.pdf" height=600 width=800 >}}
 
-## Coder at Night
+## Let's Connect
 
-I'm a self taught programmer. The main languages I use nowadays are Python, Javascript... and if you count that sort of thing: SQL, Docker and many others.
+I'm committed to open source development and transparent sharing of practical legal technology solutions. Most of my work is released under open source licenses to help the broader legal community.
 
-The problem is, I learn what I need to get my interests going. Sadly, this means picking up many things I find useful that will get me to the finish line ASAP.
-
-This does means that I have a good sense what's worth picking up, and what's useless and hype. 
-
-I'm a big firm believer in Open Source, and most of my work is ever only released under open source licenses.
-
-## Let's keep in touch!
-
-If you check out the front page, you will find various options, including my BMAC membership thingy, email and socials. Feel free to sign up to what you are comfortable, whenever you feel it or not feeling it. Or give me some feedback.
+If you're working on similar challenges or want to discuss practical legal automation, I'd welcome the conversation.
 
 {{< linkcard
     url="https://buymeacoffee.com/houfu/membership"
     title="Level 1 Supporter"
-    description="If you enjoyed my work and would like to keep following, this is the best way to keep up and give some props."
+    description="If you've found value in my work and want to support continued development of practical legal technology solutions."
     image="alfred-lv0c9E5WNSA-unsplash.jpg"
 >}}

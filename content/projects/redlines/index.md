@@ -2,13 +2,33 @@
 date = 2024-09-05T11:41:15+08:00
 title = "Redlines"
 image = "repository-open-graph.png"
-description = "Show the differences between two strings/text as a compact text, in markdown/HTML, in the terminal and more. "
+description = "Open-source document comparison tool for legal teams. Fast contract review and version control without enterprise software costs."
 +++
 ![Redlines banner image](repository-open-graph.png)
 
-`Redlines` produces a Markdown text showing the differences between two strings/text. The changes are represented with strike-throughs and underlines, which looks similar to Microsoft Word's track changes. This method of showing changes is more familiar to lawyers and is more compact for long series of characters.
+**Document Comparison Tool Built for Legal Workflows**
 
-Redlines uses `SequenceMatcher` to find differences between words used.
+Faster contract review and version control for legal teams that can't afford enterprise document management systems. Shows changes in the familiar strike-through/underline format lawyers recognize from Microsoft Word.
+
+## Business Value for Legal Teams
+
+**Time Savings**: Instantly spot changes between contract versions  
+**Cost Effective**: Open-source alternative to expensive comparison tools  
+**Familiar Interface**: Strike-through/underline format lawyers already know  
+**Multiple Formats**: Export comparisons as Markdown, HTML, or terminal display  
+**No Vendor Lock-in**: Own your tool, customize as needed  
+
+## Perfect For:
+* Solo counsels reviewing contract revisions without enterprise tools
+* Small legal teams needing efficient document version control
+* Corporate counsel working with multiple contract iterations
+* Legal professionals who want tool independence from vendors
+
+## Technical Implementation
+
+`Redlines` uses Python's `SequenceMatcher` to find differences between documents at the word level. The output format mimics Microsoft Word's track changes but works with any text format - perfect for contract review workflows where you need to quickly identify what changed between versions.
+
+**Why This Matters**: Many legal teams pay thousands for document comparison features in enterprise software. Redlines gives you the core functionality you actually use, without the enterprise overhead.
 
 {{< linkcard
     url="https://houfu.github.io/redlines/"

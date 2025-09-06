@@ -1,5 +1,5 @@
-baseurl = "http://www.example.com"
-title = "AngHouFu"
+baseurl = "https://houfu.github.io/"
+title = "Ang Hou Fu - Legal Technology Strategist"
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
@@ -12,9 +12,9 @@ style = "github-dark"
 
 [params]
   author = "Ang Hou Fu"
-  info = "I write code at night. Other law things in the day."
-  description = "Ang Hou Fu's personal website"
-  keywords = "blog,developer,personal"
+  info = "Practical tech solutions for resource-constrained legal teams"
+  description = "Practical legal technology solutions and automation strategies for resource-constrained legal teams"
+  keywords = "legal-tech,legal-automation,no-code,python,contract-automation,legal-programming,docassemble,legal-operations"
   # avatarurl = "images/avatar.jpg"
   gravatar = "damon.houf@gmail.com"
 
